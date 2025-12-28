@@ -1,0 +1,65 @@
+name: Suggest an Update
+description: Propose corrections, additions, or improvements to an existing country guide
+title: "[Update]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us keep the guides accurate and up‑to‑date! Please provide as much detail as possible about the change you're proposing.
+  - type: dropdown
+    id: guide
+    attributes:
+      label: Which guide are you referring to?
+      description: Select the country guide you'd like to update.
+      options:
+        - "Japan"
+        - "(More will appear as guides are added)"
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Section to update
+      description: "Which section of the guide needs changing? (e.g., 'Business & Professional Etiquette', 'Common Phrases', 'Social Norms & Taboos')"
+      placeholder: "Business & Professional Etiquette"
+    validations:
+      required: true
+  - type: textarea
+    id: current_content
+    attributes:
+      label: Current content (if applicable)
+      description: "Copy the text that you think is outdated, inaccurate, or missing something."
+      placeholder: "Paste the relevant lines from the guide here..."
+    validations:
+      required: false
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed change
+      description: "Describe what should be changed, added, or removed. If possible, provide the exact new wording."
+      placeholder: "Replace 'X' with 'Y' because..."
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this change needed?
+      description: "Explain why the update is important (personal experience, recent cultural shift, source citation, etc.)."
+      placeholder: "Having lived there recently, I noticed that..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: willing_to_contribute
+    attributes:
+      label: Are you willing to submit a pull request with the change?
+      description: "If you're comfortable with Git, you can make the change yourself and open a pull request."
+      options:
+        - label: "Yes, I'll create a pull request with the update."
+        - label: "I'd prefer the maintainers or another contributor to implement it."
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Once submitted, this issue will be labeled and the maintainers will review your suggestion. If you indicated you'll create a pull request, feel free to link it here.
