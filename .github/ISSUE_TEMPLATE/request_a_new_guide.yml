@@ -1,0 +1,48 @@
+name: Request a New Guide
+description: Request a cultural adaptation guide for a country not yet covered in the repository
+title: "[Guide Request]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to request a new guide! Please fill out the form below to help us understand what you're looking for.
+  - type: input
+    id: country
+    attributes:
+      label: Country Name
+      description: "Which country would you like a guide for?"
+      placeholder: "e.g., Brazil, Japan, Germany"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this guide needed?
+      description: "Briefly explain why this country would be a valuable addition (e.g., popular expat destination, unique cultural nuances, lack of existing resources)."
+      placeholder: "I've noticed many expats struggle with..."
+    validations:
+      required: true
+  - type: textarea
+    id: personal_experience
+    attributes:
+      label: Personal Experience (Optional)
+      description: "If you have lived in or traveled extensively in this country, share any insights that could help someone writing the guide."
+      placeholder: "I lived there for three years and observed that..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: willing_to_contribute
+    attributes:
+      label: Are you willing to contribute?
+      description: "Let us know if you'd like to help write the guide yourself!"
+      options:
+        - label: "Yes, I'd like to write the guide (or help write it)."
+        - label: "I can provide feedback or review the guide once it's drafted."
+        - label: "I'm just requesting; I don't have the capacity to write."
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Once submitted, this issue will be labeled and the community can start working on the guide. If you're willing to write it, feel free to assign yourself (if you have the permissions) or comment to let us know.
